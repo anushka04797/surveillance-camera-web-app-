@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 var multer = require('multer')
 var forms = multer();
-const path = __dirname + '/react-web-app/view/build/';
+const path = __dirname + '/app/view/build/';
 const app = express();
 app.use(express.static(path));
 
@@ -16,12 +16,12 @@ app.use(bodyParser.json());
 // app.use(forms.array());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', function (req,res) {
+app.get('/root', function (req,res) {
   res.sendFile(path + "index.html");
 });
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8100;
+const PORT = process.env.PORT || 8010;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);

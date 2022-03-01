@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "./static/css/main.d713d4f3.chunk.css",
+    "main.js": "./static/js/main.9d09f456.chunk.js",
+    "main.js.map": "./static/js/main.9d09f456.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.a49c5a9e.js",
+    "runtime-main.js.map": "./static/js/runtime-main.a49c5a9e.js.map",
+    "static/css/2.f8cba3be.chunk.css": "./static/css/2.f8cba3be.chunk.css",
+    "static/js/2.35e7f09a.chunk.js": "./static/js/2.35e7f09a.chunk.js",
+    "static/js/2.35e7f09a.chunk.js.map": "./static/js/2.35e7f09a.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/2.f8cba3be.chunk.css.map": "./static/css/2.f8cba3be.chunk.css.map",
+    "static/css/main.d713d4f3.chunk.css.map": "./static/css/main.d713d4f3.chunk.css.map",
+    "static/js/2.35e7f09a.chunk.js.LICENSE.txt": "./static/js/2.35e7f09a.chunk.js.LICENSE.txt",
+    "static/js/main.9d09f456.chunk.js.LICENSE.txt": "./static/js/main.9d09f456.chunk.js.LICENSE.txt",
+    "static/media/Calendar.c3ca0a6a.svg": "./static/media/Calendar.c3ca0a6a.svg",
+    "static/media/Paper.b64c5f63.svg": "./static/media/Paper.b64c5f63.svg",
+    "static/media/anime3.png": "./static/media/anime3.4438e506.png",
+    "static/media/emilyz.jpg": "./static/media/emilyz.105ff23d.jpg",
+    "static/media/all.min.css": "./static/media/fa-solid-900.46fdbd2d.woff",
+    "static/media/hide-pass.a9a908cf.svg": "./static/media/hide-pass.a9a908cf.svg",
+    "static/media/nucleo-icons.css": "./static/media/nucleo.bd5cce8b.eot",
+    "static/media/offline.0b43babe.svg": "./static/media/offline.0b43babe.svg",
+    "static/media/pass-show.15274d04.svg": "./static/media/pass-show.15274d04.svg",
+    "static/media/pg-logo.970e7dba.svg": "./static/media/pg-logo.970e7dba.svg",
+    "static/media/react-logo.561f1671.png": "./static/media/react-logo.561f1671.png",
+    "static/media/refresh.da117d36.svg": "./static/media/refresh.da117d36.svg",
+    "static/media/safe-pond.288cf28f.svg": "./static/media/safe-pond.288cf28f.svg",
+    "static/media/up-arrow.05742683.svg": "./static/media/up-arrow.05742683.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a49c5a9e.js",
+    "static/css/2.f8cba3be.chunk.css",
+    "static/js/2.35e7f09a.chunk.js",
+    "static/css/main.d713d4f3.chunk.css",
+    "static/js/main.9d09f456.chunk.js"
+  ]
+}
