@@ -34,24 +34,24 @@ const Login = () => {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar()
     const login = () => {
         setSubmitted(true)
-        // sessionStorage.setItem(TOKEN,'1234')
-        // sessionStorage.setItem(USER_ID,'1234')
-        // history.push({pathname:'/admin/dashboard',state:{from:'login'}})
+        sessionStorage.setItem(TOKEN,'1234')
+        sessionStorage.setItem(USER_ID,'1234')
+        history.push({pathname:'/admin/dashboard',state:{from:'login'}})
         
-        PUBLIC_API.post('auth/login/',{usr_email:email,password:password}).then((res)=>{
-            setSubmitted(false)
-            console.log(res)
-            sessionStorage.setItem(TOKEN,res.data.token)
-            sessionStorage.setItem(USER_ID,res.data.user_data.id)
-            dispatch(setAuthData(res.data.user_data))
-            history.push({pathname:'/admin/dashboard',state:{from:'login'}})
-        }).catch(err=>{
-            setSubmitted(false)
-            console.log(err.response.data)
-            if(err?.response?.data?.message){
-                enqueueSnackbar(err.response.data.message,{variant:"warning"})
-            }
-        })
+        // PUBLIC_API.post('auth/login/',{usr_email:email,password:password}).then((res)=>{
+        //     setSubmitted(false)
+        //     console.log(res)
+        //     sessionStorage.setItem(TOKEN,res.data.token)
+        //     sessionStorage.setItem(USER_ID,res.data.user_data.id)
+        //     dispatch(setAuthData(res.data.user_data))
+        //     history.push({pathname:'/admin/dashboard',state:{from:'login'}})
+        // }).catch(err=>{
+        //     setSubmitted(false)
+        //     console.log(err.response.data)
+        //     if(err?.response?.data?.message){
+        //         enqueueSnackbar(err.response.data.message,{variant:"warning"})
+        //     }
+        // })
     }
     const handleKeyPress = (event) => {
         if(event.key === 'Enter'){

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 // reactstrap components
 import {
@@ -16,135 +17,91 @@ import {
 } from "reactstrap";
 
 function UserProfile() {
+
+  // const [username,setUserName]=useState('')
+  // const [email,setEmail]=useState('')
+  // const [firstname,setFirstName]=useState('')
+  // const [lastname, setLastName]=useState('')
+  // const [city,setCity]=useState('')
+  // const [postalcode,setPostalCode]=useState('')
+  // const [address,setAddress]=useState('')
+  // const [usercountry,setCountry]=useState('')
+  // const [aboutme,setAboutMe]=useState('')
+  
+  // const [user,setUser]= useState({username: "",
+  //                                 email:"",
+  //                                 firstName:"",
+  //                                 lastName:"",
+  //                                 country:"",
+  //                                 city:"",
+  //                                 address: "",
+  //                                 postalcode:"",
+                                  
+  // })
+
+  const [user,setUser]= useState({old_password: "",
+                                  new_password:"",
+                                  confirm_new_password:"",
+                                                                 
+  })
+
+  const setUserProfile = (e) => {
+    setUser({...user, [e.target.name]: e.target.value});
+
+    
+  }
+
+  
+
+  // function checkPassword()
+  // {
+  //    if (user.old_password===user.new_password)
+  //      alert("New Password can not be the same as the old one!");
+  // }
+  
+ function onSave(){
+  
+  console.log('user',user);
+  if (user.old_password===user.new_password)
+  {
+       alert("New Password can not be the same as the old one!");
+      //  setUser(user.new_password="");
+      //  setUser(user.confirm_new_password="");
+  }
+      if(user.new_password!=user.confirm_new_password)
+      alert("Passwords don't match");
+
+      // user.old_password.value="";
+      // user.old_password="";
+      // user.new_password="";
+
+      setUser({
+        old_password:"", new_password:"", confirm_new_password:""
+      })
+  }
+
+  function onCancel(){
+
+    setUser({
+      old_password:"", new_password:"", confirm_new_password:""
+    })
+
+  }
+
+
+ const submit_form=()=>[
+  alert('u clicked submit')
+ ]
+
+ const [visible, setVisible] = React.useState(false);
+ const [visible1, setVisible1] = React.useState(true);
+
   return (
     <>
       <div className="content">
         <Row>
-          <Col md="8">
-            <Card>
-              <CardHeader>
-                <h5 className="title">Edit Profile</h5>
-              </CardHeader>
-              <CardBody>
-                <Form>
-                  <Row>
-                    <Col className="pr-md-1" md="5">
-                      <FormGroup>
-                        <label>Company (disabled)</label>
-                        <Input
-                          defaultValue="Creative Code Inc."
-                          disabled
-                          placeholder="Company"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="px-md-1" md="3">
-                      <FormGroup>
-                        <label>Username</label>
-                        <Input
-                          defaultValue="michael23"
-                          placeholder="Username"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-md-1" md="4">
-                      <FormGroup>
-                        <label htmlFor="exampleInputEmail1">
-                          Email address
-                        </label>
-                        <Input placeholder="mike@email.com" type="email" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pr-md-1" md="6">
-                      <FormGroup>
-                        <label>First Name</label>
-                        <Input
-                          defaultValue="Mike"
-                          placeholder="Company"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-md-1" md="6">
-                      <FormGroup>
-                        <label>Last Name</label>
-                        <Input
-                          defaultValue="Andrew"
-                          placeholder="Last Name"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="12">
-                      <FormGroup>
-                        <label>Address</label>
-                        <Input
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                          placeholder="Home Address"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pr-md-1" md="4">
-                      <FormGroup>
-                        <label>City</label>
-                        <Input
-                          defaultValue="Mike"
-                          placeholder="City"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="px-md-1" md="4">
-                      <FormGroup>
-                        <label>Country</label>
-                        <Input
-                          defaultValue="Andrew"
-                          placeholder="Country"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-md-1" md="4">
-                      <FormGroup>
-                        <label>Postal Code</label>
-                        <Input placeholder="ZIP Code" type="number" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="8">
-                      <FormGroup>
-                        <label>About Me</label>
-                        <Input
-                          cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                            that two seat Lambo."
-                          placeholder="Here can be your description"
-                          rows="4"
-                          type="textarea"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                </Form>
-              </CardBody>
-              <CardFooter>
-                <Button className="btn-fill" color="primary" type="submit">
-                  Save
-                </Button>
-              </CardFooter>
-            </Card>
-          </Col>
-          <Col md="4">
+        {visible1 && 
+        <Col md="12">
             <Card className="card-user">
               <CardBody>
                 <CardText />
@@ -159,31 +116,88 @@ function UserProfile() {
                       className="avatar"
                       src={require("assets/img/emilyz.jpg").default}
                     />
-                    <h5 className="title">Mike Andrew</h5>
+                    <h5 className="title">Martin Bator <i class="fas fa-edit"></i>  </h5>
                   </a>
-                  <p className="description">Ceo/Co-Founder</p>
+                  <p className="description">martin.bator@example.com  <i class="fas fa-edit"></i> </p>
                 </div>
                 <div className="card-description">
-                  Do not be scared of the truth because we need to restart the
-                  human foundation in truth And I love you like Kanye loves
-                  Kanye I love Rick Owens’ bed design but the back is...
+
+                
+                 <p
+                 onClick={() => { setVisible(!visible); setVisible1(!visible1) }}>Change Password</p>
                 </div>
               </CardBody>
+            </Card>
+          </Col>
+            }
+
+          {visible && 
+          <Col md="12" >
+            <Card style={{width:"80%", height:"100%"}}>
+              <CardHeader>
+                <h5 className="title">Edit Profile</h5>
+              </CardHeader>
+              <CardBody>
+                <Form onSubmit={submit_form}>
+                  
+                  <Row>
+                    <Col className="pr-md-1" md="6">
+                      <FormGroup>
+                        <label>Old Password</label>
+                        <Input
+                          name="old_password"
+                          placeholder="********"
+                          type="password"
+                          value={user.old_password}
+                          onChange={setUserProfile}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                    <Row>
+                    <Col className="pr-md-1" md="6">
+                      <FormGroup>
+                        <label>New Password</label>
+                        <Input
+                          name="new_password"
+                          placeholder="********"
+                          type="password"
+                          value={user.new_password}
+                        
+                          onChange={setUserProfile}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="pr-md-1" md="6">
+                      <FormGroup>
+                        <label>Confirm New Password</label>
+                        <Input
+                          name= "confirm_new_password"
+                          placeholder="********"
+                          type="password"
+                          value={user.confirm_new_password}
+                          onChange={setUserProfile}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  
+                </Form>
+              </CardBody>
               <CardFooter>
-                <div className="button-container">
-                  <Button className="btn-icon btn-round" color="facebook">
-                    <i className="fab fa-facebook" />
-                  </Button>
-                  <Button className="btn-icon btn-round" color="twitter">
-                    <i className="fab fa-twitter" />
-                  </Button>
-                  <Button className="btn-icon btn-round" color="google">
-                    <i className="fab fa-google-plus" />
-                  </Button>
-                </div>
+              <Button onClick={onCancel} className="btn-fill" color="primary" type="button">
+                  Cancel
+                </Button>
+                <Button className="btn-fill" color="primary" type="button" onClick={() => { setVisible1(!visible1); setVisible(!visible) }}>
+                  Save
+                </Button>
               </CardFooter>
             </Card>
           </Col>
+          }
+          
         </Row>
       </div>
     </>
